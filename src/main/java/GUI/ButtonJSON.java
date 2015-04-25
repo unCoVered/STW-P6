@@ -11,11 +11,14 @@ import common.CodeNames;
 import generator.JSON.CrearFicheroJSON;
 import generator.JSON.EncapsulaDias;
 import main.WebServicesServer;
+import org.apache.axis.client.Call;
+import org.apache.axis.client.Service;
 import parser.XML.ExtraerDiasLista;
 import parser.XML.ListaDia;
 import parser.XML.ProcesadorFicheroXML;
 
 import javax.swing.*;
+import javax.xml.namespace.QName;
 import javax.xml.transform.Result;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -32,6 +35,7 @@ public class ButtonJSON extends JButton implements ActionListener
 
 	private static String RUTA_RESOURCES = "/home/alex/Repositories/stw/Practica6/src/main/resources/predictions/";
 	private static String RUTA_FICHERO = "/home/alex/Repositories/stw/Practica6/src/main/resources/";
+	private static String URL = "http://localhost:8080/axis/services/WebServicesServer";
 
 	private ComboBox comboBox;
 	private String localidad;
@@ -71,9 +75,11 @@ public class ButtonJSON extends JButton implements ActionListener
 					if (entry.getValue().equals(this.localidad))
 					{
 						encontrado = true;
+//
+//						WebServicesServer webServicesServer = new WebServicesServer();
+//						String nombreRecibido = webServicesServer.generarJSON(entry.getKey().toString());
 
-						WebServicesServer webServicesServer = new WebServicesServer();
-						String nombreRecibido = webServicesServer.generarJSON(entry.getKey().toString());
+						String nombreRecibido = callGenerarJSON(entry.getKey().toString());
 
 						ResultWindow resultWindow = new ResultWindow(new File(nombreRecibido));
 
@@ -85,6 +91,28 @@ public class ButtonJSON extends JButton implements ActionListener
 		catch(Exception ex)
 		{
 			System.out.println("Error accion BotonJSON");
+		}
+	}
+
+	private static String callGenerarJSON(String localidad){
+		try {
+
+			String endpointURL = URL;
+
+			Service service = new Service();
+			Call call = (Call) service.createCall();
+			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
+			call.setOperationName(new QName("ServicioAEMET", "generarJSON"));
+
+			System.out.println("URL: " + URL);
+			System.out.println("localidad: " + localidad);
+
+			String res = (String) call.invoke(new Object[]{localidad});
+			return res;
+		} catch (Exception e) {
+			System.err.println(e.toString());
+			e.printStackTrace();
+			return null;
 		}
 	}
 }

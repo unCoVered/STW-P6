@@ -16,7 +16,7 @@ public class Tryhard
 	{
 //		callServiceMethod(args);
 //		callDescargaFichero(args);
-//		callGenerarHTML(args);
+		callGenerarHTML(args);
 //		callGenerarJSON(args);
 	}
 
@@ -43,7 +43,7 @@ public class Tryhard
 			System.out.println("\t MethodName: " + methodName);
 			System.out.println("\t Localidad pasada por param: " + localidad + "\n");
 
-			String result = (String) call.invoke(new Object[] { localidad });
+			String result = (String) call.invoke(new Object[] { args[2] });
 
 			System.out.println("Resultado: " + result);
 
@@ -90,40 +90,62 @@ public class Tryhard
 		}
 	}
 
-	public static void callGenerarHTML(String[] args)
-	{
-		try
-		{
-			String endpoint = args[1];
-			String methodName = "generarHTML";
-			String localidad = args[2];
+	private static String callGenerarHTML(String[] args){
+		try {
+
+			String endpointURL = args[1];
+
 			Service service = new Service();
 			Call call = (Call) service.createCall();
+			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
+			call.setOperationName(new QName("ServicioAEMET", "generarHTML"));
 
-			call.setTargetEndpointAddress(new java.net.URL(endpoint));
+			System.out.println("URL: " + args[1]);
+			System.out.println("localidad: " + args[2]);
 
-			call.setOperationName(methodName);
-
-			call.addParameter("localidad", Constants.XSD_STRING, ParameterMode.IN);
-
-			call.setReturnType(Constants.XSD_STRING);
-
-			System.out.println("\n Antes de invocar");
-			System.out.println("\t URL: " + endpoint);
-			System.out.println("\t MethodName: " + methodName);
-			System.out.println("\t Localidad pasada por param: " + localidad + "\n");
-
-			String result = (String) call.invoke(new Object[] { localidad });
-
-			System.out.println("Resultado: " + result);
-
-		} catch (Exception e)
-		{
-			//			System.err.println(e.toString());
+			String res = (String) call.invoke(new Object[]{args[2]});
+			return res;
+		} catch (Exception e) {
+			System.err.println(e.toString());
 			e.printStackTrace();
-			e.getCause();
+			return null;
 		}
 	}
+
+//	public static void callGenerarHTML(String[] args)
+//	{
+//		try
+//		{
+//			String endpoint = args[1];
+//			String methodName = "generarHTML";
+//			String localidad = args[2];
+//			Service service = new Service();
+//			Call call = (Call) service.createCall();
+//
+//			call.setTargetEndpointAddress(new java.net.URL(endpoint));
+//
+//			call.setOperationName(methodName);
+//
+//			call.addParameter("localidad", Constants.XSD_STRING, ParameterMode.IN);
+//
+//			call.setReturnType(Constants.XSD_STRING);
+//
+//			System.out.println("\n Antes de invocar");
+//			System.out.println("\t URL: " + endpoint);
+//			System.out.println("\t MethodName: " + methodName);
+//			System.out.println("\t Localidad pasada por param: " + localidad + "\n");
+//
+//			String result = (String) call.invoke(new Object[] { localidad });
+//
+//			System.out.println("Resultado: " + result);
+//
+//		} catch (Exception e)
+//		{
+//			//			System.err.println(e.toString());
+//			e.printStackTrace();
+//			e.getCause();
+//		}
+//	}
 
 	public static void callGenerarJSON(String[] args)
 	{
@@ -160,139 +182,4 @@ public class Tryhard
 		}
 	}
 
-//	public static void callServiceMethod(String[] args)
-//	{
-//		try
-//		{
-//			String endpointURL = args[1];
-//			String localidad = args[2];
-//			String serviceName = "serviceMethod";
-//			String nameSpace = "http://main/";
-//
-//			if ((args.length < 3) || (args == null))
-//				localidad = "";
-//
-//			Service  service = new Service();
-//			Call call = (Call) service.createCall();
-//
-//			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-//			call.setOperationName(new QName(nameSpace, serviceName));
-//
-//			call.addParameter("localidad", Constants.XSD_STRING, ParameterMode.IN);
-//			call.setReturnType(Constants.XSD_STRING);
-//
-//			System.out.println("Antes de invocar");
-//			String ret = (String) call.invoke(new Object[] { localidad });
-//
-//			System.out.println("URL : " + endpointURL);
-//			System.out.println("You typed : " + ret);
-//		} catch (Exception e)
-//		{
-//			//			System.err.println(e.toString());
-//			e.printStackTrace();
-//			e.getCause();
-//		}
-//	}
-
-	//	public static void callDescargaFichero(String[] args)
-//	{
-//		try
-//		{
-//			String endpointURL = args[1];
-//			Integer localidad = Integer.parseInt(args[2]);
-//			String serviceName = "descargarInfoTiempo";
-//			String nameSpace = "http://main/";
-//
-//			if ((args.length < 3) || (args == null))
-//				localidad = 0;
-//
-//			Service  service = new Service();
-//			Call call = (Call) service.createCall();
-//
-//			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-//			call.setOperationName(new QName(nameSpace, serviceName));
-//
-//			call.addParameter("localidad", Constants.XSD_INTEGER, ParameterMode.IN);
-//			call.setReturnType(Constants.XSD_STRING);
-//
-//			System.out.println("Antes de invocar");
-//			String ret = (String) call.invoke(new Object[] { localidad });
-//
-//			System.out.println("URL : " + endpointURL);
-//			System.out.println("You typed : " + ret);
-//		} catch (Exception e)
-//		{
-//			//			System.err.println(e.toString());
-//			e.printStackTrace();
-//			e.getCause();
-//		}
-//	}
-
-//	public static void callGenerarHTML(String[] args)
-//	{
-//		try
-//		{
-//			String endpointURL = args[1];
-//			Integer localidad = Integer.parseInt(args[2]);
-//			String serviceName = "generarHTML";
-//			String nameSpace = "http://main/";
-//
-//			if ((args.length < 3) || (args == null))
-//				localidad = 0;
-//
-//			Service  service = new Service();
-//			Call call = (Call) service.createCall();
-//
-//			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-//			call.setOperationName(new QName(nameSpace, serviceName));
-//
-//			call.addParameter("localidad", Constants.XSD_INTEGER, ParameterMode.IN);
-//			call.setReturnType(Constants.XSD_STRING);
-//
-//			System.out.println("Antes de invocar");
-//			String ret = (String) call.invoke(new Object[] { localidad });
-//
-//			System.out.println("URL : " + endpointURL);
-//			System.out.println("You typed : " + ret);
-//		} catch (Exception e)
-//		{
-//			//			System.err.println(e.toString());
-//			e.printStackTrace();
-//			e.getCause();
-//		}
-//	}
-
-//	public static void callGenerarJSON(String[] args)
-//	{
-//		try
-//		{
-//			String endpointURL = args[1];
-//			Integer localidad = Integer.parseInt(args[2]);
-//			String serviceName = "generarJSON";
-//			String nameSpace = "http://main/";
-//
-//			if ((args.length < 3) || (args == null))
-//				localidad = 0;
-//
-//			Service  service = new Service();
-//			Call call = (Call) service.createCall();
-//
-//			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-//			call.setOperationName(new QName(nameSpace, serviceName));
-//
-//			call.addParameter("localidad", Constants.XSD_INTEGER, ParameterMode.IN);
-//			call.setReturnType(Constants.XSD_STRING);
-//
-//			System.out.println("Antes de invocar");
-//			String ret = (String) call.invoke(new Object[] { localidad });
-//
-//			System.out.println("URL : " + endpointURL);
-//			System.out.println("You typed : " + ret);
-//		} catch (Exception e)
-//		{
-//			//			System.err.println(e.toString());
-//			e.printStackTrace();
-//			e.getCause();
-//		}
-//	}
 }

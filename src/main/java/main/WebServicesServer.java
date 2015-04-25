@@ -5,6 +5,7 @@ import common.CodeNames;
 import generator.HTML.CrearPaginaHTML;
 import generator.JSON.CrearFicheroJSON;
 import generator.JSON.EncapsulaDias;
+import org.apache.axis.AxisFault;
 import parser.XML.ExtraerDiasLista;
 import parser.XML.GestorDescargaFichero;
 import parser.XML.ListaDia;
@@ -20,7 +21,7 @@ public class WebServicesServer
 
 	public WebServicesServer(){}
 
-	public String descargarInfoTiempo(String idlocalidadRecibo)
+	public String descargarInfoTiempo(String idlocalidadRecibo) throws AxisFault
 	{
 		Integer idlocalidad = Integer.parseInt(idlocalidadRecibo);
 
@@ -30,7 +31,7 @@ public class WebServicesServer
 		return RUTA_RESOURCES + "localidad__" + idlocalidad + ".xml";
 	}
 
-	public String generarHTML(String idlocalidadRecibo)
+	public String generarHTML(String idlocalidadRecibo) throws AxisFault
 	{
 		ListaDia listaDia = new ListaDia();
 
@@ -48,7 +49,7 @@ public class WebServicesServer
 		return fileHTML.getAbsolutePath();
 	}
 
-	public String generarJSON(String idlocalidadRecibo)
+	public String generarJSON(String idlocalidadRecibo) throws AxisFault
 	{
 		ListaDia listaDia = new ListaDia();
 
