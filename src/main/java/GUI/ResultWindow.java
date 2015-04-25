@@ -3,7 +3,8 @@
  * NIP: 631211
  * Fecha Creacion: 04-18-15
  * Fecha modificacion:
- * Tiempo invertido:
+ * Fecha modificacion: 04-22-15
+ * Tiempo invertido: 1h 30min.
  */
 package GUI;
 
@@ -64,6 +65,11 @@ public class ResultWindow
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Muestra el HTML
+	 * @param frame
+	 * @throws IOException
+	 */
 	private void displayHTML(JFrame frame) throws IOException
 	{
 		JEditorPane jEditorPane = new JEditorPane();
@@ -83,6 +89,11 @@ public class ResultWindow
 		frame.getContentPane().add(jEditorPane, BorderLayout.SOUTH);
 	}
 
+	/**
+	 * Muestra el contenido del fichero JSON
+	 * @param frame
+	 * @throws IOException
+	 */
 	private void displayJSON(JFrame frame) throws IOException
 	{
 		JTextArea jTextArea = new JTextArea();

@@ -2,13 +2,15 @@
  * Autor: Alejandro Galvez
  * NIP: 631211
  * Fecha Creacion: 04-18-15
- * Fecha modificacion:
- * Tiempo invertido:
+ * Fecha modificacion: 04-22-15
+ * Tiempo invertido: 1h 30min.
  */
 package GUI;
 
+import common.CodeNames;
 import generator.JSON.CrearFicheroJSON;
 import generator.JSON.EncapsulaDias;
+import main.WebServicesServer;
 import parser.XML.ExtraerDiasLista;
 import parser.XML.ListaDia;
 import parser.XML.ProcesadorFicheroXML;
@@ -37,14 +39,14 @@ public class ButtonJSON extends JButton implements ActionListener
 
 	public ButtonJSON()
 	{
-		super("Obtener JSON");
+		super(CodeNames.JSON_BUTTON);
 
 		addActionListener(this);
 	}
 
 	public ButtonJSON(ComboBox comboBox, SortedMap<Integer, String> mapLocalidades)
 	{
-		super("Obtener JSON");
+		super(CodeNames.JSON_BUTTON);
 
 		this.comboBox = comboBox;
 		this.localidad = comboBox.getValue();
@@ -59,27 +61,22 @@ public class ButtonJSON extends JButton implements ActionListener
 		{
 			System.out.println("Pulsado boton JSON. Falta implementar SOAP.");
 
-			ListaDia listaDia = new ListaDia();
 
 			this.localidad = this.comboBox.getValue();
 			boolean encontrado = false;
-			String fichero = "";
 			for (Map.Entry<Integer, String> entry : mapLocalidades.entrySet())
 			{
 				if (!encontrado)
 				{
 					if (entry.getValue().equals(this.localidad))
 					{
-						fichero = RUTA_RESOURCES + "localidad_" + entry.getKey() + ".xml";
+						encontrado = true;
 
-						ProcesadorFicheroXML.leePrediccion(listaDia, fichero);
+						WebServicesServer webServicesServer = new WebServicesServer();
+						String nombreRecibido = webServicesServer.generarJSON(entry.getKey().toString());
 
-						EncapsulaDias diasEncapsulados = new EncapsulaDias(ExtraerDiasLista.extraerDias(listaDia));
+						ResultWindow resultWindow = new ResultWindow(new File(nombreRecibido));
 
-						File fileJSON = new File(RUTA_FICHERO + "prediccion" + localidad + ".json");
-						CrearFicheroJSON.leeDias(fileJSON, diasEncapsulados);
-
-						ResultWindow resultWindow = new ResultWindow(fileJSON);
 					}
 				} else
 					break;

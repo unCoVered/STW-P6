@@ -47,4 +47,12 @@ public class CodeNames
 	
 	//////////////////////////////////////////////////////////////////////////
 
+	//Botones, extensiones de ficheros, etc.
+	public static String HTML_BUTTON = "Obtener HTML";
+	public static String JSON_BUTTON = "Obtener JSON";
+	public static String LOCALIDAD_STRING = "localidad_";
+	public static String XML_EXTENSION = ".xml";
+	public static String HTML_EXTENSION = ".html";
+	public static String JSON_EXTENSION = ".json";
+
 }

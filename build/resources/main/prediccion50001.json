@@ -1,0 +1,490 @@
+{
+  "listaDias": [
+    {
+      "fecha": "2015-04-25",
+      "probPrecipitacion": {
+        "06-12": "5",
+        "18-24": "20",
+        "12-18": "0",
+        "00-24": "",
+        "00-12": "",
+        "00-06": "",
+        "12-24": "25"
+      },
+      "cotaNieveProv": {
+        "06-12": "",
+        "18-24": "",
+        "12-18": "",
+        "00-24": "",
+        "00-12": "",
+        "00-06": "",
+        "12-24": "2300"
+      },
+      "estadoCielo": {
+        "06-12": [
+          "Nuboso",
+          "14"
+        ],
+        "18-24": [
+          "Nuboso",
+          "14"
+        ],
+        "12-18": [
+          "Muy nuboso",
+          "15"
+        ],
+        "00-24": [
+          "",
+          ""
+        ],
+        "00-12": [
+          "",
+          ""
+        ],
+        "00-06": [
+          "",
+          ""
+        ],
+        "12-24": [
+          "Muy nuboso",
+          "15"
+        ]
+      },
+      "viento": {
+        "06-12": [
+          "O",
+          "15"
+        ],
+        "18-24": [
+          "SO",
+          "10"
+        ],
+        "12-18": [
+          "SO",
+          "15"
+        ],
+        "00-24": [
+          "",
+          ""
+        ],
+        "00-12": [
+          "",
+          ""
+        ],
+        "00-06": [
+          "SO",
+          "10"
+        ],
+        "12-24": [
+          "SO",
+          "15"
+        ]
+      },
+      "rachaMax": {
+        "06-12": "",
+        "18-24": "",
+        "12-18": "",
+        "00-24": "",
+        "00-12": "",
+        "00-06": "",
+        "12-24": ""
+      },
+      "temperatura": {
+        "maxima": 18,
+        "minima": 9,
+        "dato": {
+          "18": 16,
+          "24": 11,
+          "06": 9,
+          "12": 18
+        }
+      },
+      "sensacionTermica": {
+        "maxima": 18,
+        "minima": 7,
+        "dato": {
+          "18": 16,
+          "24": 11,
+          "06": 7,
+          "12": 18
+        }
+      },
+      "humedadRelativa": {
+        "maxima": 80,
+        "minima": 45,
+        "dato": {
+          "18": 50,
+          "24": 80,
+          "06": 80,
+          "12": 45
+        }
+      },
+      "uvMax": 7
+    },
+    {
+      "fecha": "2015-04-26",
+      "probPrecipitacion": {
+        "06-12": "100",
+        "18-24": "35",
+        "12-18": "90",
+        "00-24": "100",
+        "00-12": "100",
+        "00-06": "75",
+        "12-24": "90"
+      },
+      "cotaNieveProv": {
+        "06-12": "2300",
+        "18-24": "2100",
+        "12-18": "2300",
+        "00-24": "2200",
+        "00-12": "2300",
+        "00-06": "2300",
+        "12-24": "2100"
+      },
+      "estadoCielo": {
+        "06-12": [
+          "Muy nuboso con lluvia",
+          "25"
+        ],
+        "18-24": [
+          "Intervalos nubosos",
+          "13"
+        ],
+        "12-18": [
+          "Nuboso con lluvia escasa",
+          "44"
+        ],
+        "00-24": [
+          "Nuboso con lluvia",
+          "24"
+        ],
+        "00-12": [
+          "Muy nuboso con lluvia",
+          "25"
+        ],
+        "00-06": [
+          "Muy nuboso con lluvia",
+          "25n"
+        ],
+        "12-24": [
+          "Nuboso con lluvia",
+          "24"
+        ]
+      },
+      "viento": {
+        "06-12": [
+          "SO",
+          "25"
+        ],
+        "18-24": [
+          "O",
+          "15"
+        ],
+        "12-18": [
+          "O",
+          "20"
+        ],
+        "00-24": [
+          "SO",
+          "25"
+        ],
+        "00-12": [
+          "SO",
+          "25"
+        ],
+        "00-06": [
+          "S",
+          "15"
+        ],
+        "12-24": [
+          "SO",
+          "25"
+        ]
+      },
+      "rachaMax": {
+        "06-12": "50",
+        "18-24": "",
+        "12-18": "",
+        "00-24": "50",
+        "00-12": "50",
+        "00-06": "",
+        "12-24": "50"
+      },
+      "temperatura": {
+        "maxima": 18,
+        "minima": 10,
+        "dato": {
+          "18": 14,
+          "24": 10,
+          "06": 10,
+          "12": 16
+        }
+      },
+      "sensacionTermica": {
+        "maxima": 18,
+        "minima": 7,
+        "dato": {
+          "18": 14,
+          "24": 8,
+          "06": 7,
+          "12": 16
+        }
+      },
+      "humedadRelativa": {
+        "maxima": 85,
+        "minima": 50,
+        "dato": {
+          "18": 60,
+          "24": 75,
+          "06": 85,
+          "12": 60
+        }
+      },
+      "uvMax": 6
+    },
+    {
+      "fecha": "2015-04-27",
+      "probPrecipitacion": {
+        "00-24": "95",
+        "00-12": "85",
+        "12-24": "75"
+      },
+      "cotaNieveProv": {
+        "00-24": "1800",
+        "00-12": "1800",
+        "12-24": "1700"
+      },
+      "estadoCielo": {
+        "00-24": [
+          "Muy nuboso con lluvia",
+          "25"
+        ],
+        "00-12": [
+          "Muy nuboso con lluvia",
+          "25"
+        ],
+        "12-24": [
+          "Muy nuboso con lluvia",
+          "25"
+        ]
+      },
+      "viento": {
+        "00-24": [
+          "NO",
+          "20"
+        ],
+        "00-12": [
+          "NO",
+          "20"
+        ],
+        "12-24": [
+          "NO",
+          "20"
+        ]
+      },
+      "rachaMax": {
+        "00-24": "50",
+        "00-12": "50",
+        "12-24": "50"
+      },
+      "temperatura": {
+        "maxima": 15,
+        "minima": 7,
+        "dato": {}
+      },
+      "sensacionTermica": {
+        "maxima": 15,
+        "minima": 4,
+        "dato": {}
+      },
+      "humedadRelativa": {
+        "maxima": 85,
+        "minima": 40,
+        "dato": {}
+      },
+      "uvMax": 6
+    },
+    {
+      "fecha": "2015-04-28",
+      "probPrecipitacion": {
+        "00-24": "0",
+        "00-12": "0",
+        "12-24": "0"
+      },
+      "cotaNieveProv": {
+        "00-24": "",
+        "00-12": "",
+        "12-24": ""
+      },
+      "estadoCielo": {
+        "00-24": [
+          "Nubes altas",
+          "17"
+        ],
+        "00-12": [
+          "Poco nuboso",
+          "12"
+        ],
+        "12-24": [
+          "Nubes altas",
+          "17"
+        ]
+      },
+      "viento": {
+        "00-24": [
+          "NO",
+          "10"
+        ],
+        "00-12": [
+          "NO",
+          "10"
+        ],
+        "12-24": [
+          "NO",
+          "10"
+        ]
+      },
+      "rachaMax": {
+        "00-24": "",
+        "00-12": "",
+        "12-24": ""
+      },
+      "temperatura": {
+        "maxima": 16,
+        "minima": 3,
+        "dato": {}
+      },
+      "sensacionTermica": {
+        "maxima": 16,
+        "minima": 2,
+        "dato": {}
+      },
+      "humedadRelativa": {
+        "maxima": 90,
+        "minima": 25,
+        "dato": {}
+      },
+      "uvMax": 7
+    },
+    {
+      "fecha": "2015-04-29",
+      "probPrecipitacion": {
+        "null": "5"
+      },
+      "cotaNieveProv": {
+        "null": ""
+      },
+      "estadoCielo": {
+        "null": [
+          "Intervalos nubosos",
+          "13"
+        ]
+      },
+      "viento": {
+        "null": [
+          "NO",
+          "10"
+        ]
+      },
+      "rachaMax": {
+        "null": ""
+      },
+      "temperatura": {
+        "maxima": 20,
+        "minima": 3,
+        "dato": {}
+      },
+      "sensacionTermica": {
+        "maxima": 20,
+        "minima": 2,
+        "dato": {}
+      },
+      "humedadRelativa": {
+        "maxima": 80,
+        "minima": 35,
+        "dato": {}
+      },
+      "uvMax": 7
+    },
+    {
+      "fecha": "2015-04-30",
+      "probPrecipitacion": {
+        "null": "50"
+      },
+      "cotaNieveProv": {
+        "null": ""
+      },
+      "estadoCielo": {
+        "null": [
+          "Intervalos nubosos",
+          "13"
+        ]
+      },
+      "viento": {
+        "null": [
+          "O",
+          "10"
+        ]
+      },
+      "rachaMax": {
+        "null": ""
+      },
+      "temperatura": {
+        "maxima": 23,
+        "minima": 6,
+        "dato": {}
+      },
+      "sensacionTermica": {
+        "maxima": 23,
+        "minima": 6,
+        "dato": {}
+      },
+      "humedadRelativa": {
+        "maxima": 85,
+        "minima": 35,
+        "dato": {}
+      },
+      "uvMax": 0
+    },
+    {
+      "fecha": "2015-05-01",
+      "probPrecipitacion": {
+        "null": "45"
+      },
+      "cotaNieveProv": {
+        "null": ""
+      },
+      "estadoCielo": {
+        "null": [
+          "Intervalos nubosos",
+          "13"
+        ]
+      },
+      "viento": {
+        "null": [
+          "O",
+          "15"
+        ]
+      },
+      "rachaMax": {
+        "null": ""
+      },
+      "temperatura": {
+        "maxima": 24,
+        "minima": 11,
+        "dato": {}
+      },
+      "sensacionTermica": {
+        "maxima": 24,
+        "minima": 11,
+        "dato": {}
+      },
+      "humedadRelativa": {
+        "maxima": 75,
+        "minima": 45,
+        "dato": {}
+      },
+      "uvMax": 0
+    }
+  ]
+}

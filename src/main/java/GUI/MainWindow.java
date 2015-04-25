@@ -2,8 +2,8 @@
  * Autor: Alejandro Galvez
  * NIP: 631211
  * Fecha Creacion: 04-18-15
- * Fecha modificacion:
- * Tiempo invertido:
+ * Fecha modificacion: 04-22-15
+ * Tiempo invertido: 1h.
  */
 package GUI;
 

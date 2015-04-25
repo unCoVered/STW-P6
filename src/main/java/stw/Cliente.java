@@ -27,10 +27,12 @@ public class Cliente
 			}
 			Service  service = new Service();
 			Call call = (Call) service.createCall();
+
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
 			call.setOperationName(new QName("http://stw", "serviceMethod"));
 			call.addParameter("arg1", XMLType.XSD_STRING, ParameterMode.IN);
 			call.setReturnType(org.apache.axis.encoding.XMLType.XSD_STRING);
+
 			String ret = (String) call.invoke(new Object[] { textToSend });
 			System.out.println("You typed : " + ret);
 		} catch (Exception e)

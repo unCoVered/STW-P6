@@ -2,13 +2,15 @@
  * Autor: Alejandro Galvez
  * NIP: 631211
  * Fecha Creacion: 04-18-15
- * Fecha modificacion:
- * Tiempo invertido:
+ * Fecha modificacion: 04-22-15
+ * Tiempo invertido: 1h 30min.
  */
 package GUI;
 
+import common.CodeNames;
 import generator.HTML.CrearPaginaHTML;
 import generator.JSON.EncapsulaDias;
+import main.WebServicesServer;
 import parser.XML.ExtraerDiasLista;
 import parser.XML.ListaDia;
 import parser.XML.ProcesadorFicheroXML;
@@ -57,10 +59,9 @@ public class ButtonHTML extends JButton implements ActionListener
 		try
 		{
 			System.out.println("Pulsado boton html. Falta implementar SOAP.");
-			ListaDia listaDia = new ListaDia();
 
 			this.localidad = this.comboBox.getValue();
-			String fichero = "";
+//			String fichero = "";
 			boolean encontrado = false;
 			for (Map.Entry<Integer, String> entry : mapLocalidades.entrySet())
 			{
@@ -70,16 +71,11 @@ public class ButtonHTML extends JButton implements ActionListener
 					{
 						encontrado = true;
 
-						fichero = RUTA_RESOURCES + "localidad_" + entry.getKey() + ".xml";
+						WebServicesServer webServicesServer = new WebServicesServer();
+						String nombreRecibido = webServicesServer.generarHTML(entry.getKey().toString());
 
-						ProcesadorFicheroXML.leePrediccion(listaDia, fichero);
+						ResultWindow resultWindow = new ResultWindow(new File(nombreRecibido));
 
-						EncapsulaDias diasEncapsulados = new EncapsulaDias(ExtraerDiasLista.extraerDias(listaDia));
-
-						File fileHTML = new File(RUTA_FICHERO + "prediccion" + localidad + ".html");
-						CrearPaginaHTML.escribeDatosDia(fileHTML, diasEncapsulados);
-
-						ResultWindow resultWindow = new ResultWindow(fileHTML);
 					}
 				} else
 					break;
