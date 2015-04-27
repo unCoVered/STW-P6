@@ -1,5 +1,0 @@
-public class echo {
-    public String echoString (String param) {
-        return param;
-    }
-}

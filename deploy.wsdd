@@ -1,7 +1,0 @@
-<deployment xmlns="http://xml.apache.org/axis/wsdd/"
-    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
-    <service name="ServicioEjemplo" provider="java:RPC">
-    <parameter name="className" value="stw.Ejemplo"/>
-    <parameter name="allowedMethods" value="*"/>
-    </service>
-</deployment>

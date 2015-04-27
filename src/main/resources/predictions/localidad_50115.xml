@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<root id="50115" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.aemet.es/xsd/localidades.xsd">
+	<origen>
+		<productor>Agencia Estatal de Meteorología - AEMET. Gobierno de España</productor>
+		<web>http://www.aemet.es</web>
+		<enlace>http://www.aemet.es/es/eltiempo/prediccion/municipios/fuentes-de-ebro-id50115</enlace>
+		<language>es</language>
+		<copyright>&#169; AEMET. Autorizado el uso de la información y su reproducción citando a AEMET como autora de la misma.</copyright>
+		<nota_legal>http://www.aemet.es/es/nota_legal</nota_legal>
+	</origen>
+	<elaborado>2015-04-25T12:41:01</elaborado>
+	<nombre>Fuentes de Ebro</nombre>
+	<provincia>Zaragoza</provincia>
+	<prediccion>
+		<dia fecha="2015-04-25">
+			<prob_precipitacion periodo="00-24"></prob_precipitacion>
+			<prob_precipitacion periodo="00-12"></prob_precipitacion>
+			<prob_precipitacion periodo="12-24">5</prob_precipitacion>
+			<prob_precipitacion periodo="00-06"></prob_precipitacion>
+			<prob_precipitacion periodo="06-12">0</prob_precipitacion>
+			<prob_precipitacion periodo="12-18">5</prob_precipitacion>
+			<prob_precipitacion periodo="18-24">5</prob_precipitacion>
+			<cota_nieve_prov periodo="00-24"></cota_nieve_prov>
+			<cota_nieve_prov periodo="00-12"></cota_nieve_prov>
+			<cota_nieve_prov periodo="12-24"></cota_nieve_prov>
+			<cota_nieve_prov periodo="00-06"></cota_nieve_prov>
+			<cota_nieve_prov periodo="06-12"></cota_nieve_prov>
+			<cota_nieve_prov periodo="12-18"></cota_nieve_prov>
+			<cota_nieve_prov periodo="18-24"></cota_nieve_prov>
+			<estado_cielo periodo="00-24" descripcion=""></estado_cielo>
+			<estado_cielo periodo="00-12" descripcion=""></estado_cielo>
+			<estado_cielo periodo="12-24" descripcion="Muy nuboso">15</estado_cielo>
+			<estado_cielo periodo="00-06" descripcion=""></estado_cielo>
+			<estado_cielo periodo="06-12" descripcion="Nuboso">14</estado_cielo>
+			<estado_cielo periodo="12-18" descripcion="Muy nuboso">15</estado_cielo>
+			<estado_cielo periodo="18-24" descripcion="Intervalos nubosos">13</estado_cielo>
+			<viento periodo="00-24">
+				<direccion></direccion>
+				<velocidad></velocidad>
+			</viento>
+			<viento periodo="00-12">
+				<direccion></direccion>
+				<velocidad></velocidad>
+			</viento>
+			<viento periodo="12-24">
+				<direccion>NO</direccion>
+				<velocidad>5</velocidad>
+			</viento>
+			<viento periodo="00-06">
+				<direccion>O</direccion>
+				<velocidad>10</velocidad>
+			</viento>
+			<viento periodo="06-12">
+				<direccion>NO</direccion>
+				<velocidad>5</velocidad>
+			</viento>
+			<viento periodo="12-18">
+				<direccion>C</direccion>
+				<velocidad>0</velocidad>
+			</viento>
+			<viento periodo="18-24">
+				<direccion>C</direccion>
+				<velocidad>0</velocidad>
+			</viento>
+			<racha_max periodo="00-24"></racha_max>
+			<racha_max periodo="00-12"></racha_max>
+			<racha_max periodo="12-24"></racha_max>
+			<racha_max periodo="00-06"></racha_max>
+			<racha_max periodo="06-12"></racha_max>
+			<racha_max periodo="12-18"></racha_max>
+			<racha_max periodo="18-24"></racha_max>
+			<temperatura>
+				<maxima>25</maxima>
+				<minima>13</minima>
+				<dato hora="06">14</dato>
+				<dato hora="12">22</dato>
+				<dato hora="18">22</dato>
+				<dato hora="24">16</dato>
+			</temperatura>
+			<sens_termica>
+				<maxima>25</maxima>
+				<minima>13</minima>
+				<dato hora="06">14</dato>
+				<dato hora="12">22</dato>
+				<dato hora="18">22</dato>
+				<dato hora="24">16</dato>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>90</maxima>
+				<minima>45</minima>
+				<dato hora="06">75</dato>
+				<dato hora="12">50</dato>
+				<dato hora="18">45</dato>
+				<dato hora="24">65</dato>
+			</humedad_relativa>
+			<uv_max>6</uv_max>
+		</dia>
+		<dia fecha="2015-04-26">
+			<prob_precipitacion periodo="00-24">100</prob_precipitacion>
+			<prob_precipitacion periodo="00-12">95</prob_precipitacion>
+			<prob_precipitacion periodo="12-24">100</prob_precipitacion>
+			<prob_precipitacion periodo="00-06">55</prob_precipitacion>
+			<prob_precipitacion periodo="06-12">90</prob_precipitacion>
+			<prob_precipitacion periodo="12-18">100</prob_precipitacion>
+			<prob_precipitacion periodo="18-24">50</prob_precipitacion>
+			<cota_nieve_prov periodo="00-24">2200</cota_nieve_prov>
+			<cota_nieve_prov periodo="00-12">2300</cota_nieve_prov>
+			<cota_nieve_prov periodo="12-24">2100</cota_nieve_prov>
+			<cota_nieve_prov periodo="00-06">2300</cota_nieve_prov>
+			<cota_nieve_prov periodo="06-12">2300</cota_nieve_prov>
+			<cota_nieve_prov periodo="12-18">2300</cota_nieve_prov>
+			<cota_nieve_prov periodo="18-24">2100</cota_nieve_prov>
+			<estado_cielo periodo="00-24" descripcion="Intervalos nubosos con lluvia">23</estado_cielo>
+			<estado_cielo periodo="00-12" descripcion="Intervalos nubosos con lluvia">23</estado_cielo>
+			<estado_cielo periodo="12-24" descripcion="Intervalos nubosos con lluvia">23</estado_cielo>
+			<estado_cielo periodo="00-06" descripcion="Intervalos nubosos con lluvia">23n</estado_cielo>
+			<estado_cielo periodo="06-12" descripcion="Intervalos nubosos con lluvia">23</estado_cielo>
+			<estado_cielo periodo="12-18" descripcion="Intervalos nubosos con lluvia">23</estado_cielo>
+			<estado_cielo periodo="18-24" descripcion="Intervalos nubosos con lluvia">23</estado_cielo>
+			<viento periodo="00-24">
+				<direccion>SE</direccion>
+				<velocidad>10</velocidad>
+			</viento>
+			<viento periodo="00-12">
+				<direccion>SE</direccion>
+				<velocidad>10</velocidad>
+			</viento>
+			<viento periodo="12-24">
+				<direccion>SE</direccion>
+				<velocidad>10</velocidad>
+			</viento>
+			<viento periodo="00-06">
+				<direccion>SE</direccion>
+				<velocidad>5</velocidad>
+			</viento>
+			<viento periodo="06-12">
+				<direccion>SE</direccion>
+				<velocidad>10</velocidad>
+			</viento>
+			<viento periodo="12-18">
+				<direccion>S</direccion>
+				<velocidad>5</velocidad>
+			</viento>
+			<viento periodo="18-24">
+				<direccion>O</direccion>
+				<velocidad>10</velocidad>
+			</viento>
+			<racha_max periodo="00-24"></racha_max>
+			<racha_max periodo="00-12"></racha_max>
+			<racha_max periodo="12-24"></racha_max>
+			<racha_max periodo="00-06"></racha_max>
+			<racha_max periodo="06-12"></racha_max>
+			<racha_max periodo="12-18"></racha_max>
+			<racha_max periodo="18-24"></racha_max>
+			<temperatura>
+				<maxima>23</maxima>
+				<minima>13</minima>
+				<dato hora="06">14</dato>
+				<dato hora="12">21</dato>
+				<dato hora="18">18</dato>
+				<dato hora="24">13</dato>
+			</temperatura>
+			<sens_termica>
+				<maxima>23</maxima>
+				<minima>13</minima>
+				<dato hora="06">14</dato>
+				<dato hora="12">21</dato>
+				<dato hora="18">18</dato>
+				<dato hora="24">13</dato>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>85</maxima>
+				<minima>55</minima>
+				<dato hora="06">80</dato>
+				<dato hora="12">60</dato>
+				<dato hora="18">75</dato>
+				<dato hora="24">75</dato>
+			</humedad_relativa>
+			<uv_max>6</uv_max>
+		</dia>
+		<dia fecha="2015-04-27">
+			<prob_precipitacion periodo="00-24">30</prob_precipitacion>
+			<prob_precipitacion periodo="00-12">25</prob_precipitacion>
+			<prob_precipitacion periodo="12-24">5</prob_precipitacion>
+			<cota_nieve_prov periodo="00-24">1800</cota_nieve_prov>
+			<cota_nieve_prov periodo="00-12">1800</cota_nieve_prov>
+			<cota_nieve_prov periodo="12-24"></cota_nieve_prov>
+			<estado_cielo periodo="00-24" descripcion="Intervalos nubosos">13</estado_cielo>
+			<estado_cielo periodo="00-12" descripcion="Nuboso">14</estado_cielo>
+			<estado_cielo periodo="12-24" descripcion="Poco nuboso">12</estado_cielo>
+			<viento periodo="00-24">
+				<direccion>NO</direccion>
+				<velocidad>35</velocidad>
+			</viento>
+			<viento periodo="00-12">
+				<direccion>NO</direccion>
+				<velocidad>35</velocidad>
+			</viento>
+			<viento periodo="12-24">
+				<direccion>NO</direccion>
+				<velocidad>35</velocidad>
+			</viento>
+			<racha_max periodo="00-24">65</racha_max>
+			<racha_max periodo="00-12">65</racha_max>
+			<racha_max periodo="12-24">65</racha_max>
+			<temperatura>
+				<maxima>19</maxima>
+				<minima>10</minima>
+			</temperatura>
+			<sens_termica>
+				<maxima>19</maxima>
+				<minima>10</minima>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>75</maxima>
+				<minima>40</minima>
+			</humedad_relativa>
+			<uv_max>6</uv_max>
+		</dia>
+		<dia fecha="2015-04-28">
+			<prob_precipitacion periodo="00-24">0</prob_precipitacion>
+			<prob_precipitacion periodo="00-12">0</prob_precipitacion>
+			<prob_precipitacion periodo="12-24">0</prob_precipitacion>
+			<cota_nieve_prov periodo="00-24"></cota_nieve_prov>
+			<cota_nieve_prov periodo="00-12"></cota_nieve_prov>
+			<cota_nieve_prov periodo="12-24"></cota_nieve_prov>
+			<estado_cielo periodo="00-24" descripcion="Poco nuboso">12</estado_cielo>
+			<estado_cielo periodo="00-12" descripcion="Despejado">11</estado_cielo>
+			<estado_cielo periodo="12-24" descripcion="Poco nuboso">12</estado_cielo>
+			<viento periodo="00-24">
+				<direccion>NO</direccion>
+				<velocidad>30</velocidad>
+			</viento>
+			<viento periodo="00-12">
+				<direccion>NO</direccion>
+				<velocidad>30</velocidad>
+			</viento>
+			<viento periodo="12-24">
+				<direccion>NO</direccion>
+				<velocidad>30</velocidad>
+			</viento>
+			<racha_max periodo="00-24">60</racha_max>
+			<racha_max periodo="00-12">60</racha_max>
+			<racha_max periodo="12-24">60</racha_max>
+			<temperatura>
+				<maxima>19</maxima>
+				<minima>8</minima>
+			</temperatura>
+			<sens_termica>
+				<maxima>19</maxima>
+				<minima>5</minima>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>75</maxima>
+				<minima>35</minima>
+			</humedad_relativa>
+			<uv_max>6</uv_max>
+		</dia>
+		<dia fecha="2015-04-29">
+			<prob_precipitacion>5</prob_precipitacion>
+			<cota_nieve_prov></cota_nieve_prov>
+			<estado_cielo descripcion="Poco nuboso">12</estado_cielo>
+			<viento>
+				<direccion>NO</direccion>
+				<velocidad>20</velocidad>
+			</viento>
+			<racha_max></racha_max>
+			<temperatura>
+				<maxima>23</maxima>
+				<minima>8</minima>
+			</temperatura>
+			<sens_termica>
+				<maxima>23</maxima>
+				<minima>8</minima>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>75</maxima>
+				<minima>35</minima>
+			</humedad_relativa>
+			<uv_max>7</uv_max>
+		</dia>
+		<dia fecha="2015-04-30">
+			<prob_precipitacion>30</prob_precipitacion>
+			<cota_nieve_prov></cota_nieve_prov>
+			<estado_cielo descripcion="Intervalos nubosos">13</estado_cielo>
+			<viento>
+				<direccion>C</direccion>
+				<velocidad>0</velocidad>
+			</viento>
+			<racha_max></racha_max>
+			<temperatura>
+				<maxima>25</maxima>
+				<minima>12</minima>
+			</temperatura>
+			<sens_termica>
+				<maxima>25</maxima>
+				<minima>12</minima>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>70</maxima>
+				<minima>35</minima>
+			</humedad_relativa>
+		</dia>
+		<dia fecha="2015-05-01">
+			<prob_precipitacion>25</prob_precipitacion>
+			<cota_nieve_prov></cota_nieve_prov>
+			<estado_cielo descripcion="Intervalos nubosos">13</estado_cielo>
+			<viento>
+				<direccion>NO</direccion>
+				<velocidad>20</velocidad>
+			</viento>
+			<racha_max></racha_max>
+			<temperatura>
+				<maxima>28</maxima>
+				<minima>15</minima>
+			</temperatura>
+			<sens_termica>
+				<maxima>28</maxima>
+				<minima>15</minima>
+			</sens_termica>
+			<humedad_relativa>
+				<maxima>65</maxima>
+				<minima>35</minima>
+			</humedad_relativa>
+		</dia>
+	</prediccion>
+</root>
