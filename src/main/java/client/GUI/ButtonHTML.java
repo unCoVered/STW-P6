@@ -9,6 +9,8 @@ package client.GUI;
 
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
+import org.apache.axis.utils.Options;
+import server.WebServicesServer;
 
 import javax.swing.*;
 import javax.xml.namespace.QName;
@@ -24,7 +26,7 @@ import java.util.SortedMap;
 public class ButtonHTML extends JButton implements ActionListener
 {
 
-	private static String URL = "http://localhost:8080/axis/services/WebServicesServer";
+//	private static String URL = "http://localhost:8080/axis/services/WebServicesServer";
 
 	private ComboBox comboBox;
 	private String localidad;
@@ -71,6 +73,7 @@ public class ButtonHTML extends JButton implements ActionListener
 						String nombreRecibido = callGenerarHTML(entry.getKey().toString());
 
 						ResultWindow resultWindow = new ResultWindow(new File(nombreRecibido));
+//						System.out.println(nombreRecibido);
 
 					}
 				} else
@@ -86,14 +89,18 @@ public class ButtonHTML extends JButton implements ActionListener
 	private static String callGenerarHTML(String localidad){
 		try {
 
-			String endpointURL = URL;
+//			String endpointURL = URL;
+
+			Options options = new Options(new String[]{});
+
+			String endpointURL = options.getURL();
 
 			Service service = new Service();
 			Call call = (Call) service.createCall();
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("ServicioAEMET", "generarHTML"));
+			call.setOperationName(new QName("WebServicesServer", "generarHTML"));
 
-			System.out.println("URL: " + URL);
+//			System.out.println("URL: " + URL);
 			System.out.println("localidad: " + localidad);
 
 			String res = (String) call.invoke(new Object[]{localidad});

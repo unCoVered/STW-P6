@@ -10,6 +10,7 @@ package client;
 import client.GUI.MainWindow;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
+import org.apache.axis.utils.Options;
 import server.parser.XML.ExtraerNombres;
 
 import javax.xml.namespace.QName;
@@ -24,7 +25,7 @@ import java.util.TreeMap;
 public class MainGUI
 {
 	private static String RUTA_RESOURCES = "/home/alex/Repositories/stw/Practica6/src/main/resources/predictions";
-	private static String URL = "http://localhost:8080/axis/services/WebServicesServer";
+	//private static String URL = "-lhttp://localhost:8080/axis/services/WebServicesServer";
 
 	public static void main(String[] args)
 	{
@@ -58,12 +59,6 @@ public class MainGUI
 
 			//Muestra la ventana con los municipio
 			MainWindow window = new MainWindow(localidades);
-
-			String localidad = "50297";
-			String resultado = callServiceRandom(localidad);
-
-
-
 		}
 		catch (Exception e)
 		{
@@ -75,14 +70,17 @@ public class MainGUI
 	{
 		try {
 
-			String endpointURL = URL;
+			//String endpointURL = URL;
+			Options options = new Options(new String[]{});
+
+			String endpointURL = options.getURL();
 
 			Service service = new Service();
 			Call call = (Call) service.createCall();
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("ServicioAEMET", "descargarInfoTiempo"));
+			call.setOperationName(new QName("WebServicesServer", "descargarInfoTiempo"));
 
-			System.out.println("URL: " + URL);
+//			System.out.println("URL: " + URL);
 			System.out.println("localidad: " + localidad);
 
 			String res = (String) call.invoke(new Object[]{localidad});
@@ -102,14 +100,17 @@ public class MainGUI
 	{
 		try {
 
-			String endpointURL = URL;
+			//String endpointURL = URL;
+			Options options = new Options(new String[]{});
+
+			String endpointURL = options.getURL();
 
 			Service service = new Service();
 			Call call = (Call) service.createCall();
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("ServicioAEMET", "serviceMethod"));
+			call.setOperationName(new QName("WebServicesServer", "serviceMethod"));
 
-			System.out.println("URL: " + URL);
+//			System.out.println("URL: " + URL);
 			System.out.println("localidad: " + localidad);
 
 			String res = (String) call.invoke(new Object[]{localidad});

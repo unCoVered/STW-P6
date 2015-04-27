@@ -17,7 +17,7 @@ public class Echo {
 			Service service = new Service();
 			Call call = (Call) service.createCall();
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("GalvezServer", "descargarInfoTiempo"));
+			call.setOperationName(new QName("WebServicesServer", "generarHTML"));
 			String res = (String) call.invoke(new Object[]{"50297"});
 			System.out.println(res);
 		}catch(Exception e){

@@ -93,7 +93,7 @@ public class ButtonJSON extends JButton implements ActionListener
 			Service service = new Service();
 			Call call = (Call) service.createCall();
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("ServicioAEMET", "generarJSON"));
+			call.setOperationName(new QName("WebServicesServer", "generarJSON"));
 
 			System.out.println("URL: " + URL);
 			System.out.println("localidad: " + localidad);
