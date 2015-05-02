@@ -26,8 +26,6 @@ import java.util.SortedMap;
 public class ButtonHTML extends JButton implements ActionListener
 {
 
-//	private static String URL = "http://localhost:8080/axis/services/WebServicesServer";
-
 	private ComboBox comboBox;
 	private String localidad;
 	private SortedMap<Integer, String> mapLocalidades;
@@ -57,7 +55,6 @@ public class ButtonHTML extends JButton implements ActionListener
 			System.out.println("Pulsado boton html");
 
 			this.localidad = this.comboBox.getValue();
-//			String fichero = "";
 			boolean encontrado = false;
 			for (Map.Entry<Integer, String> entry : mapLocalidades.entrySet())
 			{
@@ -67,14 +64,9 @@ public class ButtonHTML extends JButton implements ActionListener
 					{
 						encontrado = true;
 
-//						WebServicesServer webServicesServer = new WebServicesServer();
-//						String nombreRecibido = webServicesServer.generarHTML(entry.getKey().toString());
-
 						String nombreRecibido = callGenerarHTML(entry.getKey().toString());
 
 						ResultWindow resultWindow = new ResultWindow(new File(nombreRecibido));
-//						System.out.println(nombreRecibido);
-
 					}
 				} else
 					break;
@@ -88,9 +80,6 @@ public class ButtonHTML extends JButton implements ActionListener
 
 	private static String callGenerarHTML(String localidad){
 		try {
-
-//			String endpointURL = URL;
-
 			Options options = new Options(new String[]{});
 
 			String endpointURL = options.getURL();
@@ -100,13 +89,9 @@ public class ButtonHTML extends JButton implements ActionListener
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
 			call.setOperationName(new QName("WebServicesServer", "generarHTML"));
 
-//			System.out.println("URL: " + URL);
-			System.out.println("localidad: " + localidad);
-
-			String res = (String) call.invoke(new Object[]{localidad});
-
-			return res;
-		} catch (Exception e) {
+			return (String) call.invoke(new Object[]{localidad});
+		}
+		catch (Exception e) {
 			System.err.println(e.toString());
 			e.printStackTrace();
 			return null;

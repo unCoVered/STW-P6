@@ -11,7 +11,7 @@ import client.GUI.MainWindow;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
 import org.apache.axis.utils.Options;
-import server.parser.XML.ExtraerNombres;
+import server.parser.CSV.ExtraerLocalidadesCSV;
 
 import javax.xml.namespace.QName;
 import java.io.File;
@@ -24,40 +24,17 @@ import java.util.TreeMap;
  */
 public class MainGUI
 {
-	private static String RUTA_RESOURCES = "/home/alex/Repositories/stw/Practica6/src/main/resources/predictions";
-	//private static String URL = "-lhttp://localhost:8080/axis/services/WebServicesServer";
-
 	public static void main(String[] args)
 	{
+		String RUTA_RESOURCES = "/home/alex/Repositories/stw/Practica6/src/main/resources/";
+
 		try
 		{
-			//Metodo para obtener la lista de municipios
-//			System.out.println("Descargando XML de predicciones");
-//			for (int i = 50001; i < 50299; i++)
-//			{
-//				Integer localidad = i;
-//
-////				WebServicesServer webServicesServer = new WebServicesServer();
-////				webServicesServer.descargarInfoTiempo(localidad.toString());
-//
-//			generarJSON	String descargado = callServiceDescargarFichero(localidad.toString());
-//				System.out.println(descargado);
-//			}
-
-			File directory = new File(RUTA_RESOURCES);
 			SortedMap<Integer, String> localidades = new TreeMap<Integer, String>();
-			if (directory.exists())
-			{
-				File[] directoryList = directory.listFiles();
-				for (File file : directoryList)
-				{
-					String archivo = RUTA_RESOURCES + "/" + file.getName();
-					ExtraerNombres.rellenaMapLocalidades(archivo, localidades);
-				}
-			} else
-				System.out.println("No existe el directorio!");
+			File fileCSV = new File(RUTA_RESOURCES + "codigos.csv");
 
-			//Muestra la ventana con los municipio
+			ExtraerLocalidadesCSV.readCSV(fileCSV, localidades);
+
 			MainWindow window = new MainWindow(localidades);
 		}
 		catch (Exception e)
@@ -65,62 +42,4 @@ public class MainGUI
 			e.printStackTrace();
 		}
 	}
-
-	public static String callServiceDescargarFichero(String localidad)
-	{
-		try {
-
-			//String endpointURL = URL;
-			Options options = new Options(new String[]{});
-
-			String endpointURL = options.getURL();
-
-			Service service = new Service();
-			Call call = (Call) service.createCall();
-			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("WebServicesServer", "descargarInfoTiempo"));
-
-//			System.out.println("URL: " + URL);
-			System.out.println("localidad: " + localidad);
-
-			String res = (String) call.invoke(new Object[]{localidad});
-
-			return res;
-		} catch (Exception e) {
-			System.err.println(e.toString());
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-
-	////////////////////////////////////////////////////////
-
-	public static String callServiceRandom(String localidad)
-	{
-		try {
-
-			//String endpointURL = URL;
-			Options options = new Options(new String[]{});
-
-			String endpointURL = options.getURL();
-
-			Service service = new Service();
-			Call call = (Call) service.createCall();
-			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("WebServicesServer", "serviceMethod"));
-
-//			System.out.println("URL: " + URL);
-			System.out.println("localidad: " + localidad);
-
-			String res = (String) call.invoke(new Object[]{localidad});
-
-			return res;
-		} catch (Exception e) {
-			System.err.println(e.toString());
-			e.printStackTrace();
-			return null;
-		}
-	}
-
 }

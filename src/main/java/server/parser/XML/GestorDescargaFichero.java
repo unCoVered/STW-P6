@@ -18,6 +18,7 @@ public class GestorDescargaFichero
 	 * Dada una ruta, genera un objeto file con el fichero descargado
 	 *
 	 * @param rutaFichero
+	 * @param urlFichero
 	 * @return
 	 */
 	public static File descargarFichero(String rutaFichero, String urlFichero)
@@ -32,21 +33,16 @@ public class GestorDescargaFichero
 			ruta = new URL(urlFichero);
 
 			FileUtils.copyURLToFile(ruta, fichero);
-		} catch (Exception e)
+		}
+		catch (Exception e)
 		{
-			System.out.println("Error descargarFichero: " + urlFichero.substring(urlFichero.length() - 19)
-					+ ". Falta implementar SOAP");
+			System.out.println("Error descargarFichero: " + urlFichero.substring(urlFichero.length() - 19));
 
 			error = true;
 
 		}
 		finally
 		{
-			if (error)
-			{
-
-			}
-
 			return fichero;
 		}
 	}

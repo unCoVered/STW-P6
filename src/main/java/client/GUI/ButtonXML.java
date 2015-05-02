@@ -7,11 +7,9 @@
  */
 package client.GUI;
 
-import client.MainGUI;
-import org.apache.axis.utils.Options;
-import server.common.CodeNames;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
+import org.apache.axis.utils.Options;
 
 import javax.swing.*;
 import javax.xml.namespace.QName;
@@ -22,25 +20,25 @@ import java.util.Map;
 import java.util.SortedMap;
 
 /**
- * Crea una clase que anyade un boton cuya accion linkea con los metodos encargados de generar el fichero JSON
+ * Crea una clase que anyade un boton cuya accion linkea con los metodos encargados de generar el fichero HTML
  */
-public class ButtonJSON extends JButton implements ActionListener
+public class ButtonXML extends JButton implements ActionListener
 {
 
 	private ComboBox comboBox;
 	private String localidad;
 	private SortedMap<Integer, String> mapLocalidades;
 
-	public ButtonJSON()
+	public ButtonXML()
 	{
-		super(CodeNames.JSON_BUTTON);
+		super("Descargar XML");
 
 		addActionListener(this);
 	}
 
-	public ButtonJSON(ComboBox comboBox, SortedMap<Integer, String> mapLocalidades)
+	public ButtonXML(ComboBox comboBox, SortedMap<Integer, String> mapLocalidades)
 	{
-		super(CodeNames.JSON_BUTTON);
+		super("Descargar XML");
 
 		this.comboBox = comboBox;
 		this.localidad = comboBox.getValue();
@@ -53,7 +51,7 @@ public class ButtonJSON extends JButton implements ActionListener
 	{
 		try
 		{
-			System.out.println("Pulsado boton JSON");
+			System.out.println("Pulsado boton xml");
 
 			this.localidad = this.comboBox.getValue();
 			boolean encontrado = false;
@@ -65,23 +63,23 @@ public class ButtonJSON extends JButton implements ActionListener
 					{
 						encontrado = true;
 
-						String nombreRecibido = callGenerarJSON(entry.getKey().toString());
-
-						ResultWindow resultWindow = new ResultWindow(new File(nombreRecibido));
+						String nombreRecibido = callServiceDescargarFichero(entry.getKey().toString());
 					}
-				} else
+				}
+				else
 					break;
 			}
 		}
 		catch(Exception ex)
 		{
-			System.out.println("Error accion BotonJSON");
+			System.out.println("Error accion botonHTML");
 		}
 	}
 
-	private static String callGenerarJSON(String localidad)
+	public static String callServiceDescargarFichero(String localidad)
 	{
 		try {
+
 			Options options = new Options(new String[]{});
 
 			String endpointURL = options.getURL();
@@ -89,11 +87,10 @@ public class ButtonJSON extends JButton implements ActionListener
 			Service service = new Service();
 			Call call = (Call) service.createCall();
 			call.setTargetEndpointAddress(new java.net.URL(endpointURL));
-			call.setOperationName(new QName("WebServicesServer", "generarJSON"));
+			call.setOperationName(new QName("WebServicesServer", "descargarInfoTiempo"));
 
 			return (String) call.invoke(new Object[]{localidad});
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.err.println(e.toString());
 			e.printStackTrace();
 			return null;

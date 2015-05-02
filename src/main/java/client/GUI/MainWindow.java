@@ -36,27 +36,19 @@ public class MainWindow
 	{
 		JFrame frame = new JFrame("Weather");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setPreferredSize(new Dimension(300, 100));
+		frame.setPreferredSize(new Dimension(450, 100));
 
-		//Creamos lista con las localidades
-		String[] listaLocalidades = new String[mapLocalidades.size()];
-		int i = 0;
-		for(int key : mapLocalidades.keySet())
-		{
-			listaLocalidades[i] = mapLocalidades.get(key);
-			i++;
-		}
-
-		//Label de prueba
-		this.comboBox = new ComboBox(listaLocalidades);
+		this.comboBox = new ComboBox(mapLocalidades);
 		frame.getContentPane().add(comboBox, BorderLayout.CENTER);
 
 		//Botones
+		ButtonXML buttonXML = new ButtonXML(comboBox, mapLocalidades);
 		ButtonHTML buttonHTML = new ButtonHTML(comboBox, mapLocalidades);
 		ButtonJSON buttonJSON = new ButtonJSON(comboBox, mapLocalidades);
 
 		JPanel panel = new JPanel();
-		panel.add(buttonHTML, BorderLayout.EAST);
+		panel.add(buttonXML, BorderLayout.EAST);
+		panel.add(buttonHTML, BorderLayout.CENTER);
 		panel.add(buttonJSON, BorderLayout.WEST);
 
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);

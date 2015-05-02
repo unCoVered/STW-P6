@@ -7,10 +7,16 @@
  */
 package client.GUI;
 
+import org.apache.axis.client.Call;
+import org.apache.axis.client.Service;
+import org.apache.axis.utils.Options;
+
 import javax.swing.*;
+import javax.xml.namespace.QName;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.SortedMap;
 
 /**
  * Clase que crea un combo Box con los elementos pasados con un array
@@ -26,11 +32,11 @@ public class ComboBox extends JPanel implements ActionListener
 
 	}
 
-	public ComboBox(String[] villageArray)
+	public ComboBox(SortedMap<Integer, String> mapLocalidades)
 	{
 		super(new BorderLayout());
 
-		this.villageArray = villageArray;
+		this.villageArray = this.rellenaLocalidades(mapLocalidades);
 
 		this.villageComboBox = new JComboBox(villageArray);
 		this.villageComboBox.setSelectedIndex(0);
@@ -43,7 +49,20 @@ public class ComboBox extends JPanel implements ActionListener
 	{
 		System.out.println("Cambiado el comboBox");
 
-		this.setVillageComboBox((JComboBox)e.getSource());
+		this.setVillageComboBox((JComboBox) e.getSource());
+	}
+
+	private String[] rellenaLocalidades(SortedMap<Integer, String> mapLocalidades)
+	{
+		String[] listaLocalidades = new String[mapLocalidades.size()];
+		int i = 0;
+		for(int key : mapLocalidades.keySet())
+		{
+			listaLocalidades[i] = mapLocalidades.get(key);
+			i++;
+		}
+
+		return listaLocalidades;
 	}
 
 	public String[] getVillageArray()

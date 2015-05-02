@@ -24,10 +24,11 @@ public class WebServicesServer
 	{
 		Integer idlocalidad = Integer.parseInt(idlocalidadRecibo);
 
-		GestorDescargaFichero
+		File file = GestorDescargaFichero
 				.descargarFichero(RUTA_RESOURCES, "http://www.aemet.es/xml/municipios/localidad_" + idlocalidad + ".xml");
 
-		return RUTA_RESOURCES + "localidad__" + idlocalidad + ".xml";
+		return file.getAbsolutePath();TAREA:
+- Funciona. Errores de libs arreglados
 	}
 
 	public String generarHTML(String idlocalidadRecibo) throws AxisFault
